@@ -7,6 +7,10 @@ body,
     height: 100%;
 }
 
+.page-content {
+    background-color: #eee;
+}
+
 .navbar {
     display: flex;
     flex-flow: nowrap;
@@ -47,42 +51,38 @@ body,
 
 .search-icon {
     position: absolute;
-    top: 9px;
-    left: 33px;
-    color: white;
+    top: 10px;
+    left: 35px;
+    color: #eee;
 }
 
 .search-input {
     width: 100%;
-    padding: 10px 10px 10px 40px;
-    background-color: rgb(123, 136, 209);
-    color: white;
-    border-radius: 5px;
+    padding: 13px 13px 13px 42px;
+    background-color: rgb(96, 112, 199);
+    color: #eee;
+    border-radius: 4px;
     border: none;
     box-sizing: border-box;
     margin: 0px 25px;
     font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-size: 18px;
+    font-size: 15px;
 }
 .search-input:focus {
     outline-width: 0;
 }
-.search-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: white;
+.search-input::-webkit-search-cancel-button {
+    background: red !important;
 }
-.search-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: white;
-    opacity: 1;
+.search-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #eee;
 }
 .search-input::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: white;
+    color: #eee;
     opacity: 1;
 }
-.search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
-}
 .search-input::-ms-input-placeholder { /* Microsoft Edge */
-    color: white;
+    color: #eee;
 }
 
 .auth-status {
@@ -100,10 +100,41 @@ body,
 }
 
 .drawer {
+    overflow: hidden;
+    padding: 10px 0px;
     transition: width 0.5s;
-    width: 0px;
-    background-color: gray;
-}
-.drawer.active {
     width: 220px;
+}
+.drawer.inactive {
+    width: 0px;
+}
+
+.drawer-divider {
+    margin: 8px 5px;
+    width: calc(100% - 10px);
+    height: 1px;
+    background-color: #ddd;
+}
+
+.drawer-link {
+    white-space: nowrap; 
+    color: #777;
+    height: 50px;
+    width: 100%;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+.drawer-link:hover {
+    transition: background-color 0.3s ease;
+    background-color: #e6e6e6;
+}
+
+.drawer-link-icon {
+    margin: 0 20px;
 }

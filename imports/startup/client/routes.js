@@ -13,10 +13,10 @@ const renderRoutes = () => (
 	<Router history={browserHistory}>
 		<Route path="/" component={BaseLayout}>
 			<IndexRoute component={Home}/>
-			<Route path="login" component={Login}/>
-			<Route path="join" component={Join}/>
-			<Route path="*" component={NotFound}/>
 		</Route>
+		<Route path="login" component={Login}/>
+		<Route path="join" component={Join}/>
+		<Route path="*" component={NotFound}/>
 	</Router>
 );
 
