@@ -1,0 +1,66 @@
+.home {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    display: inline-block;
+}
+
+.hall-card {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: calc(33.33% - 10px);
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.hall-card-image {
+    width: 100%;
+    height: auto;
+}
+
+.hall-card-title {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 15px 15px 20px 15px;
+}
+
+.hall-card-phone {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0px 15px;
+}
+
+.hall-card-address {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0px 15px;
+}
+
+.hall-card-price {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0px 15px;
+}
+
+.hall-card-description {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 20px 15px 15px 15px;
+}
+
+.hall-card-actions {
+    width: 100%;
+    border-top: solid 1px #ddd;
+}
+
+.home .action-button {
+    width: auto !important;
+    margin: 15px !important;
+}

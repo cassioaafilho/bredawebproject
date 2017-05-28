@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { Component } from 'react';
-import styles from '/imports/ui/stylesheets/login-join'
+import styles from '/imports/ui/stylesheets/login-join';
 
 export default class Join extends Component {
 

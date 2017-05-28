@@ -122,8 +122,8 @@ body,
     height: 50px;
     width: 100%;
     font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -134,9 +134,12 @@ body,
     transition: background-color 0.3s ease;
     background-color: #e6e6e6;
 }
+.drawer-link div {
+    margin-top: 2px;
+}
 
 .drawer-link-icon {
-    margin: 0 20px;
+    margin: 0 15px 0 20px;
 }
 
 .profile-avatar {
