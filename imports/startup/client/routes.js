@@ -9,14 +9,18 @@ import Login from '/imports/ui/containers/login';
 import Join from '/imports/ui/containers/join';
 import NotFound from '/imports/ui/containers/not-found';
 
+const requireUnAuth = (nextState, replaceState) => {
+	if (Meteor.userId()) replaceState({ nextPathname: '/' }, '/');
+};
+
 const renderRoutes = () => (
 	<Router history={browserHistory}>
 		<Route path="/" component={BaseLayout}>
-			<IndexRoute component={Home}/>
+			<IndexRoute component={Home} />
 		</Route>
-		<Route path="login" component={Login}/>
-		<Route path="join" component={Join}/>
-		<Route path="*" component={NotFound}/>
+		<Route path="login" component={Login} onEnter={requireUnAuth} />
+		<Route path="join" component={Join} onEnter={requireUnAuth} />
+		<Route path="*" component={NotFound} />
 	</Router>
 );
 

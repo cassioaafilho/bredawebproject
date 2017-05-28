@@ -46,7 +46,7 @@ body,
 .search-bar {
     position: absolute;
     left: 355px;
-    width: calc(100% - 700px);
+    width: calc(100% - 520px);
 }
 
 .search-icon {
@@ -137,4 +137,38 @@ body,
 
 .drawer-link-icon {
     margin: 0 20px;
+}
+
+.profile-avatar {
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background-color: orangered;
+    color: white;
+    text-transform: uppercase;
+    float: right;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar .mdl-menu, .navbar .mdl-menu__outline {
+    margin-top: -30px;
+}
+.navbar .mdl-menu__item {
+    height: 32px !important;
+    line-height: 32px !important;
+    display: flex;
+    align-items: center;
+}
+.navbar .mdl-menu__item i {
+    margin-right: 5px;
+}
+
+.sign-in-button {
+    color: white !important;
+    background-color: #4285f4 !important;
+    width: 85px !important;
+    border-radius: 3px !important;
 }

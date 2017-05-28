@@ -6,10 +6,18 @@ import { Component } from 'react';
 import styles from '/imports/ui/stylesheets/base-layout'
 
 export default class BaseLayout extends Component {
-    
+
+    // Lifecyle handlers
+    componentDidMount() {
+        componentHandler.upgradeDom();
+    }
+    componentDidUpdate() {
+        componentHandler.upgradeDom();
+    }
+
     // UI helpers
     whereAmI(location) {
-        if(location == "/") return "Home";
+        if (location == "/") return "Home";
         else return "Unknown";
     }
 
@@ -24,40 +32,53 @@ export default class BaseLayout extends Component {
         event.preventDefault();
         browserHistory.push('/');
     };
-    goMyHallz(event) {
-        event.preventDefault();
-        browserHistory.push('/my-hallz');
-    };
     goMyProfile(event) {
         event.preventDefault();
         browserHistory.push('/profile');
     };
-    goNotifications(event) {
+    goLogin(event) {
         event.preventDefault();
-        browserHistory.push('/notifications');
+        browserHistory.push('/login');
     };
-    goSettings(event) {
+    logout(event) {
         event.preventDefault();
-        browserHistory.push('/settings');
-    };
-    goHelp(event) {
-        event.preventDefault();
-        browserHistory.push('/help');
-    };
+        Meteor.logout((error) => {
+            if (error) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: error });
+            else browserHistory.push('/login');
+        });
+    }
 
     render() {
         return (
             <div className="layout">
                 <div className="navbar">
                     <i className="menu-icon material-icons" onClick={this.toggleDrawer}>menu</i>
-                    <img className="logo" src="/images/logo_white.png"/>
+                    <img className="logo" src="/images/logo_white.png" />
                     <div className="vertical-divider"></div>
                     <div className="title">{this.whereAmI(this.props.location.pathname)}</div>
                     <div className="search-bar">
                         <i className="search-icon material-icons">search</i>
-                        <input className="search-input" type="search" placeholder="Search"/>
+                        <input className="search-input" type="search" placeholder="Search" />
                     </div>
-                    <div className="auth-status">(Auth Status)</div>
+                    {Meteor.user() ? (
+                        <div className="auth-status">
+                            <div key="profile-avatar" id="profile-avatar" className="profile-avatar">{Meteor.user().emails[0].address.slice(0, 2)}</div>
+                            <ul key="mdl-menu" className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" htmlFor="profile-avatar">
+                                <li className="mdl-menu__item" onClick={this.goMyProfile}>
+                                    <i className="material-icons">account_circle</i>
+                                    My Profile
+                                        </li>
+                                <li className="mdl-menu__item" onClick={this.logout}>
+                                    <i className="material-icons">exit_to_app</i>
+                                    Sign out
+                                        </li>
+                            </ul>
+                        </div>
+                    ) : (
+                            <div className="auth-status">
+                                <button key="sign-in-button" className="sign-in-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onClick={this.goLogin}>Sign in</button>
+                            </div>
+                        )}
                 </div>
                 <div className="page-content">
                     <div className="drawer">
@@ -65,27 +86,7 @@ export default class BaseLayout extends Component {
                             <i className="drawer-link-icon material-icons">home</i>
                             <div className="drawer-link-name">Home</div>
                         </div>
-                        <div className="drawer-link" onClick={this.goMyHallz}>
-                            <i className="drawer-link-icon material-icons">assessment</i>
-                            <div className="drawer-link-name">My Hallz</div>
-                        </div>
-                        <div className="drawer-link" onClick={this.goMyProfile}>
-                            <i className="drawer-link-icon material-icons">account_circle</i>
-                            <div className="drawer-link-name">My Profile</div>
-                        </div>
-                        <div className="drawer-link" onClick={this.goNotifications}>
-                            <i className="drawer-link-icon material-icons">home</i>
-                            <div className="drawer-link-name">Notifications</div>
-                        </div>
                         <div className="drawer-divider"></div>
-                        <div className="drawer-link" onClick={this.goSettings}>
-                            <i className="drawer-link-icon material-icons">settings</i>
-                            <div className="drawer-link-name">Settings</div>
-                        </div>
-                        <div className="drawer-link" onClick={this.goHelp}>
-                            <i className="drawer-link-icon material-icons">help</i>
-                            <div className="drawer-link-name">Help</div>
-                        </div>
                     </div>
                     {this.props.children}
                 </div>

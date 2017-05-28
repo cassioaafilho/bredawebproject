@@ -10,12 +10,14 @@ export default class Login extends Component {
     // Lifecyle handlers
     componentWillMount() {
         this.setState({
-            email: ''
+            email: '',
+            password: ''
         });
     }
     componentDidMount() {
         componentHandler.upgradeDom();
         document.getElementById('email').parentElement.classList.remove('is-invalid');
+        document.getElementById('password').parentElement.classList.remove('is-invalid');
     }
 
     // Routing handlers
@@ -27,11 +29,19 @@ export default class Login extends Component {
     // Event handlers
     onLoginSubmit(event) {
         event.preventDefault();
-        alert('submit');
+        Meteor.loginWithPassword({ email: this.state.email }, this.state.password, (error) => {
+            if (error) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: error });
+            else browserHistory.push('/');
+        });
     };
     onEmailChange(event) {
         this.setState({
             email: event.target.value
+        });
+    };
+    onPasswordChange(event) {
+        this.setState({
+            password: event.target.value
         });
     };
 
@@ -50,6 +60,10 @@ export default class Login extends Component {
                         <div className="form-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input className="mdl-textfield__input" value={this.state.email} onChange={this.onEmailChange.bind(this)} type="email" id="email" required/>
                             <label className="mdl-textfield__label" htmlFor="email">Email</label>
+                        </div>
+                        <div className="form-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input className="mdl-textfield__input" value={this.state.password} onChange={this.onPasswordChange.bind(this)} type="password" id="password" required/>
+                            <label className="mdl-textfield__label" htmlFor="password">Password</label>
                         </div>
                         <div className="card-actions">
                             <div id="more-options" className="action-link">More options</div>

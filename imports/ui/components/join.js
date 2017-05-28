@@ -31,7 +31,21 @@ export default class Join extends Component {
     // Event handlers
     onJoinSubmit(event) {
         event.preventDefault();
-        alert('submit');
+        if (this.state.password == this.state.confirmPassword) {
+            Accounts.createUser({
+                email: this.state.email,
+                password: this.state.password
+            }, (error) => {
+                if (error) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: error });
+                else {
+                    Meteor.loginWithPassword({ email: this.state.email }, this.state.password, (err) => {
+                        if (err) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: err });
+                        else browserHistory.push('/');
+                    });
+                }
+            });
+        }
+        else document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: 'The passwords don\'t match' });
     };
     onEmailChange(event) {
         this.setState({
@@ -62,15 +76,15 @@ export default class Join extends Component {
                     </div>
                     <form onSubmit={this.onJoinSubmit.bind(this)}>
                         <div className="form-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input className="mdl-textfield__input" value={this.state.email} onChange={this.onEmailChange.bind(this)} type="email" id="email" required/>
+                            <input className="mdl-textfield__input" value={this.state.email} onChange={this.onEmailChange.bind(this)} type="email" id="email" required />
                             <label className="mdl-textfield__label" htmlFor="email">Email</label>
                         </div>
                         <div className="form-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input className="mdl-textfield__input" value={this.state.password} onChange={this.onPasswordChange.bind(this)} type="password" id="password" required/>
+                            <input className="mdl-textfield__input" value={this.state.password} onChange={this.onPasswordChange.bind(this)} type="password" id="password" required />
                             <label className="mdl-textfield__label" htmlFor="password">Password</label>
                         </div>
                         <div className="form-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input className="mdl-textfield__input" value={this.state.confirmPassword} onChange={this.onConfirmPasswordChange.bind(this)} type="password" id="confirm-password" required/>
+                            <input className="mdl-textfield__input" value={this.state.confirmPassword} onChange={this.onConfirmPasswordChange.bind(this)} type="password" id="confirm-password" required />
                             <label className="mdl-textfield__label" htmlFor="confirm-password">Confirm Password</label>
                         </div>
                         <div className="card-actions">

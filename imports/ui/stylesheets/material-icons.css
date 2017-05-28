@@ -21,3 +21,7 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+.mdl-button:hover {
+  filter: brightness(85%);
+}
