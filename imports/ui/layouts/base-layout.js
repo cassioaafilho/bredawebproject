@@ -32,10 +32,6 @@ export default class BaseLayout extends Component {
         event.preventDefault();
         browserHistory.push('/');
     };
-    goMyProfile(event) {
-        event.preventDefault();
-        browserHistory.push('/profile');
-    };
     goLogin(event) {
         event.preventDefault();
         browserHistory.push('/login');
@@ -64,14 +60,10 @@ export default class BaseLayout extends Component {
                         <div className="auth-status">
                             <div key="profile-avatar" id="profile-avatar" className="profile-avatar">{Meteor.user().emails[0].address.slice(0, 2)}</div>
                             <ul key="mdl-menu" className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" htmlFor="profile-avatar">
-                                <li className="mdl-menu__item" onClick={this.goMyProfile}>
-                                    <i className="material-icons">account_circle</i>
-                                    My Profile
-                                        </li>
                                 <li className="mdl-menu__item" onClick={this.logout}>
                                     <i className="material-icons">exit_to_app</i>
                                     Sign out
-                                        </li>
+                                </li>
                             </ul>
                         </div>
                     ) : (

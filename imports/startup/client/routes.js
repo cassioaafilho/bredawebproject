@@ -6,7 +6,6 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import BaseLayout from '/imports/ui/containers/base-layout';
 import Home from '/imports/ui/containers/home';
 import AddHall from '/imports/ui/containers/add-hall';
-import MyAccount from '/imports/ui/containers/my-account';
 import Hall from '/imports/ui/containers/hall';
 import Login from '/imports/ui/containers/login';
 import Join from '/imports/ui/containers/join';
@@ -25,7 +24,6 @@ const renderRoutes = () => (
 		<Route path="/" component={BaseLayout}>
 			<IndexRoute component={Home} />
 			<Route path="add-hall" component={AddHall} onEnter={requireAuth} />
-			<Route path="my-account" component={MyAccount} onEnter={requireAuth} />
 			<Route path="hall" component={Hall} onEnter={requireAuth} />
 		</Route>
 		<Route path="login" component={Login} onEnter={requireUnAuth} />
