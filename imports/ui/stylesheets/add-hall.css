@@ -1,0 +1,24 @@
+.add-hall {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.add-hall-form-frame {
+    height: 100%;
+    width: calc(100% - 40px);
+    margin: 20px;
+}
+
+.add-hall-image-frame {
+    height: 100%;
+    width: calc(100% - 40px);
+    margin: 20px;
+}
+
+.add-hall-image {
+    height: 100%;
+    max-width: 100%;
+}

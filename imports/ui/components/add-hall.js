@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 import { Component } from 'react';
 import styles from '/imports/ui/stylesheets/add-hall'
 
-export default class NotFound extends Component {
+export default class AddHall extends Component {
 
     // Links
     goHome(event) {
@@ -16,8 +16,10 @@ export default class NotFound extends Component {
     render() {
         return (
             <div className="add-hall">
-                <h1>Oops!</h1>
-                <img src="/images/404.jpg" onClick={this.goHome}/>
+                <div className="add-hall-form-frame"></div>
+                <div className="add-hall-image-frame">
+                    <img id="cropper" className="add-hall-image" src="no-image.jpg" />
+                </div>
             </div>
         );
     };
