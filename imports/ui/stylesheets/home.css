@@ -64,3 +64,9 @@
     width: auto !important;
     margin: 15px !important;
 }
+
+.floating-button {
+    position: fixed !important;
+    bottom: 50px !important;
+    right: 50px !important;
+}
