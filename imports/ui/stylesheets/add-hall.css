@@ -2,23 +2,49 @@
     height: 100%;
     width: 100%;
     padding: 30px;
-    display: flex;
-    flex-direction: row;
 }
 
 .add-hall-form-frame {
-    height: 100%;
-    width: calc(100% - 40px);
+    display: inline-block;
+    vertical-align: top;
+    width: calc(60% - 80px);
     margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 .add-hall-image-frame {
-    height: 100%;
-    width: calc(100% - 40px);
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fff;
+    width: calc(40% - 80px);
     margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 .add-hall-image {
-    height: 100%;
+    width: 100%;
     max-width: 100%;
+    height: auto;
+}
+
+.add-hall-form-frame-title {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.form-input {
+    margin-top: 10px !important;
+    width: 100% !important;
+}
+
+.form-input-image {
+    width: 100%;
+    margin-bottom: 10px;
 }
