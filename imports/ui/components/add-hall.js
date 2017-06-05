@@ -127,12 +127,12 @@ export default class AddHall extends Component {
                     </form>
                     <div className="add-hall-card-actions">
                         <button className="action-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" form="add-hall-form">Add</button>
-                        <button className="action-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onClick={this.goHome}>Cancel</button>
+                        <button className="action-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onClick={this.goHome}>Go Back</button>
                     </div>
                 </div>
                 <div className="add-hall-image-frame">
                     <div>
-                        <input type="file" id="image" className="form-input-image" accept="image/*" onChange={this.changeImage.bind(this)} />
+                        <input type="file" id="image" className="form-input-image" accept="image/*" onChange={this.changeImage.bind(this)} required />
                         <img id="cropper" className="add-hall-image" src="/images/no-image.jpg" />
                     </div>
                 </div>
