@@ -44,7 +44,7 @@ export default class AddHall extends Component {
                 const image = document.getElementById('cropper');
                 image.src = e.target.result;
                 cropper = new Cropper(image, {
-                    aspectRatio: 795/803,
+                    aspectRatio: 795 / 803,
                     viewMode: 2,
                     dragMode: 'none',
                     zoomOnWheel: 'false',
@@ -62,14 +62,23 @@ export default class AddHall extends Component {
     };
     onAddHallSubmit(event) {
         event.preventDefault();
-        Meteor.call('halls.insert', this.state.title, this.state.image, this.state.phone, this.state.address, this.state.price, this.state.description, (error) => {
-            if(error) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: error });
-            else {
-                document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: 'Hall added successfully!' });
-                browserHistory.push('/');
-            }
-        });
+        if (this.state.image == '') {
+            document.querySelectorAll('dialog')[0].showModal();
+        }
+        else {
+            Meteor.call('halls.insert', this.state.title, this.state.image, this.state.phone, this.state.address, this.state.price, this.state.description, (error) => {
+                if (error) document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: error });
+                else {
+                    document.getElementById('snackbar').MaterialSnackbar.showSnackbar({ message: 'Hall added successfully!' });
+                    browserHistory.push('/');
+                }
+            });
+        }
     };
+    closeDialog(event) {
+        event.preventDefault();
+        document.querySelectorAll('dialog')[0].close();
+    }
     onTitleChange(event) {
         this.setState({
             title: event.target.value
@@ -99,6 +108,15 @@ export default class AddHall extends Component {
     render() {
         return (
             <div className="add-hall">
+                <dialog className="mdl-dialog">
+                    <h4 className="mdl-dialog__title">Error</h4>
+                    <div className="mdl-dialog__content">
+                        <p>You must add an image to your hall</p>
+                    </div>
+                    <div className="mdl-dialog__actions">
+                        <button type="button" className="mdl-button close" onClick={this.closeDialog}>Ok</button>
+                    </div>
+                </dialog>
                 <div className="add-hall-form-frame">
                     <form id="add-hall-form" onSubmit={this.onAddHallSubmit.bind(this)}>
                         <div className="add-hall-form-frame-title">
