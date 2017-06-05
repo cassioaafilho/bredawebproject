@@ -1,0 +1,34 @@
+{ 
+    "_id" : "6oMJkK8inqdRgAwfM", 
+    "title" : "The four seasons", 
+    "image" : "hTs2zYGSTRtrN3tbz", 
+    "phone" : "+1 212-758-5700", 
+    "address" : "57 E 57th St, New York", 
+    "price" : "USD 1500.00/day", 
+    "description" : "Experience five-star New York hotel living in this modern-deco landmark just steps away from Central Park.", 
+    "questions" : [
+
+    ], 
+    "createdAt" : ISODate("2017-06-05T02:50:10.621+0000"), 
+    "creator" : "A3sAWLq6N9yRWvZs3", 
+    "booked" : false, 
+    "booker" : "", 
+    "booker_email" : ""
+}
+{ 
+    "_id" : "RGQfyPZwJ9ATYog36", 
+    "title" : "Marriott", 
+    "image" : "cFPiDW2dQQ7Ns8yZg", 
+    "phone" : "+1 212-755-4000", 
+    "address" : "525 Lexington Ave, New York", 
+    "price" : "USD 800.00/day", 
+    "description" : "Located 483 m from Grand Central Station and St. Patrick’s Cathedral, New York Marriott East Side features signature Marriott bedding.", 
+    "questions" : [
+
+    ], 
+    "createdAt" : ISODate("2017-06-05T03:36:16.163+0000"), 
+    "creator" : "RhxaQpzo82Msg2ygX", 
+    "booked" : false, 
+    "booker" : "", 
+    "booker_email" : ""
+}

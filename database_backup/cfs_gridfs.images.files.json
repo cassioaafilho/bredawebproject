@@ -1,0 +1,26 @@
+{ 
+    "_id" : ObjectId("5934c6e2af33a11a685b99d3"), 
+    "filename" : "images-hTs2zYGSTRtrN3tbz", 
+    "contentType" : "image/jpeg", 
+    "length" : NumberInt(33276), 
+    "chunkSize" : NumberInt(2097152), 
+    "uploadDate" : ISODate("2017-06-05T02:50:10.764+0000"), 
+    "aliases" : [
+        null
+    ], 
+    "metadata" : null, 
+    "md5" : "0b293029d89dd3fe256b7e8755283121"
+}
+{ 
+    "_id" : ObjectId("5934d1b0e5367719ac800c11"), 
+    "filename" : "images-cFPiDW2dQQ7Ns8yZg", 
+    "contentType" : "image/jpeg", 
+    "length" : NumberInt(88577), 
+    "chunkSize" : NumberInt(2097152), 
+    "uploadDate" : ISODate("2017-06-05T03:36:16.362+0000"), 
+    "aliases" : [
+        null
+    ], 
+    "metadata" : null, 
+    "md5" : "190b687ccf0e359c100e9d2e8baeaa72"
+}

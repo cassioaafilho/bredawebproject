@@ -23,6 +23,10 @@ export default class Join extends Component {
     }
 
     // Routing handlers
+    goHome(event) {
+        event.preventDefault();
+        browserHistory.push('/');
+    };
     goLogin(event) {
         event.preventDefault();
         browserHistory.push('/login');
@@ -91,6 +95,7 @@ export default class Join extends Component {
                             <div id="more-options" className="action-link">More options</div>
                             <ul className="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" htmlFor="more-options">
                                 <li className="mdl-menu__item" onClick={this.goLogin}>Sign in</li>
+                                <li className="mdl-menu__item" onClick={this.goHome}>Go back</li>
                             </ul>
                             <button className="action-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Create</button>
                         </div>

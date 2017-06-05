@@ -3,9 +3,15 @@ import React from 'react';
 import { compose } from 'react-komposer';
 import tracker from '/imports/helpers/meteor-data-tracker';
 import BaseLayout from '/imports/ui/layouts/base-layout';
+import Loading from '/imports/ui/components/loading';
 
 const getReactiveData = (props, onData) => {
-    onData(null, {});
+    if (!Meteor.loggingIn())
+        onData(null, { user: Meteor.user() ? Meteor.user() : null });
 };
 
-export default compose(tracker(getReactiveData))(BaseLayout);
+const options = {
+    loadingHandler: () => (<Loading/>)
+};
+
+export default compose(tracker(getReactiveData), options)(BaseLayout);

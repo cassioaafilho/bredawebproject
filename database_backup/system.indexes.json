@@ -1,0 +1,222 @@
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.users"
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "username" : NumberInt(1)
+    }, 
+    "name" : "username_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "emails.address" : NumberInt(1)
+    }, 
+    "name" : "emails.address_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "services.resume.loginTokens.hashedToken" : NumberInt(1)
+    }, 
+    "name" : "services.resume.loginTokens.hashedToken_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "services.resume.loginTokens.token" : NumberInt(1)
+    }, 
+    "name" : "services.resume.loginTokens.token_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "services.resume.haveLoginTokensToDelete" : NumberInt(1)
+    }, 
+    "name" : "services.resume.haveLoginTokensToDelete_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "services.resume.loginTokens.when" : NumberInt(1)
+    }, 
+    "name" : "services.resume.loginTokens.when_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "services.password.reset.when" : NumberInt(1)
+    }, 
+    "name" : "services.password.reset.when_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "services.email.verificationTokens.token" : NumberInt(1)
+    }, 
+    "name" : "services.email.verificationTokens.token_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "services.password.reset.token" : NumberInt(1)
+    }, 
+    "name" : "services.password.reset.token_1", 
+    "ns" : "meteor.users", 
+    "sparse" : NumberInt(1)
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.meteor_accounts_loginServiceConfiguration"
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "service" : NumberInt(1)
+    }, 
+    "name" : "service_1", 
+    "ns" : "meteor.meteor_accounts_loginServiceConfiguration"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs.images.filerecord"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs._tempstore.chunks"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs_gridfs._tempstore.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "filename" : NumberInt(1)
+    }, 
+    "name" : "filename_1", 
+    "ns" : "meteor.cfs_gridfs._tempstore.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs_gridfs._tempstore.chunks"
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "files_id" : NumberInt(1), 
+        "n" : NumberInt(1)
+    }, 
+    "name" : "files_id_1_n_1", 
+    "ns" : "meteor.cfs_gridfs._tempstore.chunks"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs_gridfs.images.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "filename" : NumberInt(1)
+    }, 
+    "name" : "filename_1", 
+    "ns" : "meteor.cfs_gridfs.images.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.cfs_gridfs.images.chunks"
+}
+{ 
+    "v" : NumberInt(1), 
+    "unique" : true, 
+    "key" : {
+        "files_id" : NumberInt(1), 
+        "n" : NumberInt(1)
+    }, 
+    "name" : "files_id_1_n_1", 
+    "ns" : "meteor.cfs_gridfs.images.chunks"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "filename" : NumberInt(1), 
+        "uploadDate" : NumberInt(1)
+    }, 
+    "name" : "filename_1_uploadDate_1", 
+    "ns" : "meteor.cfs_gridfs.images.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "filename" : NumberInt(1), 
+        "uploadDate" : NumberInt(1)
+    }, 
+    "name" : "filename_1_uploadDate_1", 
+    "ns" : "meteor.cfs_gridfs._tempstore.files"
+}
+{ 
+    "v" : NumberInt(1), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "meteor.halls"
+}

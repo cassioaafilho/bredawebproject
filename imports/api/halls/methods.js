@@ -1,53 +1,69 @@
 // Methods related to halls
 import { Meteor } from 'meteor/meteor';
-import { HallsCollection } from './halls.js';
+import { HallsCollection } from './halls';
+import { ImagesCollection } from '/imports/api/images/images';
 
 Meteor.methods({
-    'halls.insert'(title, imageURL, phone, address, price, description) {
-        return HallsCollection.insert({
-            title,
-            imageURL,
-            phone,
-            address,
-            price,
-            description,
-            questions: [],
-            createdAt: new Date()
-        });
+    'halls.insert'(title, image, phone, address, price, description) {
+        if (this.userId) {
+            ImagesCollection.insert(image, (err, fileObj) => {
+                if (err) return err;
+                HallsCollection.insert({
+                    title,
+                    image: fileObj._id,
+                    phone,
+                    address,
+                    price,
+                    description,
+                    questions: [],
+                    createdAt: new Date(),
+                    creator: this.userId,
+                    booked: false,
+                    booker: '',
+                    booker_email: ''
+                }, (error) => {
+                    if (error) return error;
+                });
+            });
+        }
     },
-    'halls.imageURL.update'(id, newimageURL) {
-        return HallsCollection.update(id, {
-            $set: { imageURL: newimageURL }
-        });
+    'halls.delete'(id, imageid) {
+        if (this.userId) {
+            if (HallsCollection.findOne(id).creator == this.userId) {
+                ImagesCollection.remove(imageid, (error) => {
+                    if (error) return error;
+                });
+                HallsCollection.remove(id, (error) => {
+                    if (error) return error;
+                });
+            }
+            else {
+                return new Error('Permission Denied! You are not owner of this hall.');
+            }
+        }
     },
-    'halls.phone.update'(id, newphone) {
-        return HallsCollection.update(id, {
-            $set: { phone: newphone }
-        });
+    'halls.book'(id) {
+        if (this.userId) {
+            if (HallsCollection.findOne(id).booked)
+                return new Error('Sorry! This hall has been booked just now.');
+            HallsCollection.update(id, {
+                $set: {
+                    booked: true,
+                    booker: this.userId,
+                    booker_email: Meteor.users.findOne(this.userId).emails[0].address
+                }
+            });
+        }
     },
-    'halls.address.update'(id, newaddress) {
-        return HallsCollection.update(id, {
-            $set: { address: newaddress }
-        });
-    },
-    'halls.price.update'(id, newprice) {
-        return HallsCollection.update(id, {
-            $set: { price: newprice }
-        });
-    },
-    'halls.description.update'(id, newdescription) {
-        return HallsCollection.update(id, {
-            $set: { description: newdescription }
-        });
-    },
-    'halls.questions.insert'(id, question) {
-        return HallsCollection.update(id, {
-            $push: { questions: { _id: new Date(), question, answers: [] } }
-        });
-    },
-    'halls.questions.answer'(id, question, answer) {
-        return HallsCollection.update({ "_id": id, "questions._id": question}, {
-            $push: { "questions.$.answers": answer }
-        });
+    'halls.unbook'(id) {
+        if (this.userId) {
+            HallsCollection.update(id, {
+                $set: {
+                    booked: false,
+                    booker: '',
+                    booker_email: ''
+                }
+            });
+        }
     }
 });

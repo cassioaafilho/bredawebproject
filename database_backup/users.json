@@ -1,0 +1,54 @@
+{ 
+    "_id" : "A3sAWLq6N9yRWvZs3", 
+    "createdAt" : ISODate("2017-06-05T02:47:13.609+0000"), 
+    "services" : {
+        "password" : {
+            "bcrypt" : "$2a$10$xk8PAkvPn3jmPT3iPXYEcuHtyUqHTjoFxUuLOmmIlijX12AYE72TK"
+        }, 
+        "resume" : {
+            "loginTokens" : [
+                {
+                    "when" : ISODate("2017-06-05T02:47:13.637+0000"), 
+                    "hashedToken" : "kEcg62CmYioTK2KgsdEzHJRuuheAuhxNy/dbaSdzDLI="
+                }, 
+                {
+                    "when" : ISODate("2017-06-05T02:47:13.781+0000"), 
+                    "hashedToken" : "ESJjXaismE9ck3SJyplHKi7ljZP+uSYSHPBHAkWGebY="
+                }
+            ]
+        }
+    }, 
+    "emails" : [
+        {
+            "address" : "gabriel.dias.rezende.martins@gmail.com", 
+            "verified" : false
+        }
+    ]
+}
+{ 
+    "_id" : "RhxaQpzo82Msg2ygX", 
+    "createdAt" : ISODate("2017-06-05T03:03:01.719+0000"), 
+    "services" : {
+        "password" : {
+            "bcrypt" : "$2a$10$L9DciXpj9IOyKHJFQSVGxeUf63tdIKvNO0GUB8sMzuM0BkyLegt42"
+        }, 
+        "resume" : {
+            "loginTokens" : [
+                {
+                    "when" : ISODate("2017-06-05T03:03:01.729+0000"), 
+                    "hashedToken" : "gTUeh9p22D4XMCo2oQvEQEI63MSaYFVT8Rk40bh89DQ="
+                }, 
+                {
+                    "when" : ISODate("2017-06-05T03:11:37.804+0000"), 
+                    "hashedToken" : "f0N1zso90Vp8CH2Qe9fQ/z/qBSPJyRpFhGC+XmF4RF8="
+                }
+            ]
+        }
+    }, 
+    "emails" : [
+        {
+            "address" : "polly@mail.com", 
+            "verified" : false
+        }
+    ]
+}
