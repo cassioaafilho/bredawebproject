@@ -11,7 +11,6 @@ export default class AddHall extends Component {
 
     // Lifecyle handlers
     componentWillMount() {
-        console.log('here')
         this.setState({
             title: '',
             phone: '',
