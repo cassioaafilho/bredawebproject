@@ -83,7 +83,7 @@ export default class Home extends Component {
                         <div className="hall-card-phone">Phone: {hall.phone}</div>
                         <div className="hall-card-address">Address: {hall.address}</div>
                         <div className="hall-card-price">Price: {hall.price}</div>
-                        <div className="hall-card-description">{hall.description.length > 110 ? hall.description.substring(0, 110) + '...' : hall.description}</div>
+                        <div className="hall-card-description">{hall.description.length > 100 ? hall.description.substring(0, 100) + '...' : hall.description}</div>
                         {(() => {
                             if (hall.booked && hall.booker == Meteor.userId()) {
                                 return (
