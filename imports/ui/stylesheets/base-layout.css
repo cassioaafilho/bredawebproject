@@ -6,10 +6,6 @@ body,
 }
 
 .page-content {
-    height: calc(100% - 60px);
-}
-
-.page-content {
     padding-top: 60px;
     background-color: #eee;
 }
